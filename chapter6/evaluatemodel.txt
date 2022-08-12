@@ -1,0 +1,9 @@
+SELECT * 
+
+FROM 
+
+ ML.EVALUATE(MODEL `m`, ( 
+
+SELECT * FROM t 
+
+WHERE t.date BETWEEN '20190801' AND '20200731')) 
