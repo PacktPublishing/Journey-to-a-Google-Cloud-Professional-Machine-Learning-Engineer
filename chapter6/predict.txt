@@ -1,0 +1,9 @@
+SELECT *  
+
+FROM  
+
+ML.PREDICT(MODEL `m`, ( 
+
+SELECT * FROM t 
+
+WHERE t.date BETWEEN '20200801' AND '20210731')) 
