@@ -1,0 +1,64 @@
+    #Create project/VPC/subnet 
+
+gcloud projects create test10122021 --folder 464105225938 
+
+gcloud compute networks create vpc1 --project corvel-032021  --subnet-mode=custom 
+
+gcloud compute networks subnets create subnet11 --network=vpc1 --range=10.10.1.0/24 --project corvel-032021 --region us-west1 
+
+gcloud compute networks subnets create subnet12 --network=vpc1 --range=10.10.2.0/24 --project corvel-032021 --region us-east1 
+
+gcloud compute networks create vpc2 --project corvel-032021  --subnet-mode=custom 
+
+gcloud compute networks subnets create subnet2 --network=vpc2 --range=192.168.1.0/24 --project corvel-032021 --region us-central1 
+
+gcloud compute networks create vpc3 --project test10122021  --subnet-mode=custom 
+
+gcloud compute networks subnets create subnet3 --network=vpc3 --range=172.16.1.0/24 --project test10122021 --region us-central1 
+
+    #Create VMs 
+
+gcloud compute instances create myvm11 --project corvel-032021 --machine-type=f1-micro --zone=us-west1-a  --subnet=subnet11 
+
+gcloud compute instances create myvm12 --project corvel-032021 --machine-type=f1-micro --network-interface=subnet=subnet12,no-address  --zone=us-east1-b 
+
+gcloud compute instances create myvm2 --project corvel-032021 --machine-type=f1-micro --network-interface=subnet=subnet2,no-address  --zone=us-central1-b 
+
+gcloud compute instances create myvm3 --project test10122021 --machine-type=f1-micro --network-interface=subnet=subnet3,no-address --zone=us-central1-b 
+
+    #List all the VMs and write down their IP addresses 
+
+gcloud compute instances list --project corvel-032021     
+
+gcloud compute instances list --project test10122021 
+
+    #Open Firewall for VPC1 
+
+gcloud compute firewall-rules create fw1 --network vpc1 --allow tcp:22,icmp --source-ranges 0.0.0.0/0 --project corvel-032021 
+
+    #ssh from console to myvm11, and you shall be able to ping vm12 from vm11. 
+
+    #But how can we ping from myvm11 to myvm2? You need to create VPC peering between VPC1 and VPC2 (they are in the same project): 
+
+gcloud compute networks peerings create peer12 --project=corvel-032021  --network=vpc1 --peer-project=corvel-032021 --peer-network=vpc2 
+
+gcloud compute networks peerings create peer21 --peer-project=corvel-032021  --network=vpc2 --project=corvel-032021 --peer-network=vpc1 
+
+gcloud compute networks peerings list --project=corvel-032021 
+
+    #Open Firewall for VPC2 
+
+gcloud compute firewall-rules create fw2 --network vpc2 --allow tcp:22,icmp --source-ranges 0.0.0.0/0 --project corvel-032021 
+
+    #Now you shall be able to ping vm2 from vm11. But how can we ping from myvm11 to myvm3? You need to create VPC peering between VPC1 and VPC3 (they are in different projects) 
+
+gcloud compute networks peerings create peer13 --project=corvel-032021  --network=vpc1 --peer-project=test10122021 --peer-network=vpc3 
+
+gcloud compute networks peerings create peer31 --project=test10122021 --network=vpc3 --peer-project=corvel-032021 --peer-network=vpc1 
+
+gcloud compute networks peerings list --project=corvel-032021 
+
+    #Open Firewall for vpc3 
+
+gcloud compute firewall-rules create fw3 --network vpc3 --allow tcp:22,icmp --source-ranges 10.10.1.0/24 --project test10122021 
+    #Now you shall be able to ping vm3 from vm11. 
