@@ -1,0 +1,21 @@
+# Import the Google Cloud client library 
+
+from google.com import language_v1 
+
+#set a client variable 
+
+client = language_v1.LanguageServiceClient() 
+
+# The text to analyze 
+
+text = "We heard great review and thought we finally found a Authentic Classy Italiant Restaurant... WRONG!" 
+
+document = language_v1.Document(content=text, type_ = language_v1.Document.Type.PLAIN_TEXT) 
+
+#Detects the sentiment of the text 
+
+sentiment = client.analyze_sentiment(request={'document':document}).document_sentiment 
+
+print("Text: {}".format(text)) 
+
+print("Sentiment:{}".format(sentiment.score, sentiment.magnitude)) 
