@@ -4,7 +4,7 @@
 
 This is the code repository for [Journey to Become a Google Cloud Machine Learning Engineer](https://www.packtpub.com/product/journey-to-become-a-google-cloud-machine-learning-engineer/9781803233727), published by Packt.
 
-**Develop stunning data visualizations and machine learning-driven insights with Amazon QuickSight**
+**Build the mind and hand of a Google Certified ML professional**
 
 ## What is this book about?
 
