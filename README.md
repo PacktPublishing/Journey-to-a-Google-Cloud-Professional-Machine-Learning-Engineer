@@ -14,23 +14,24 @@ This is the code repository for [Journey to Become a Google Cloud Machine Learni
 
 ## What is this book about?
 
-The adoption of cloud-native BI tools, like Amazon QuickSight, enables organizations to gather insights from data at scale. This book is a practical guide to performing simple-to-advanced tasks with Amazon QuickSight.
+This book aims to provide a study guide to learn and master machine learning in Google Cloud: to build a broad and strong knowledge base, train hands-on skills, and get certified as a Google Cloud Machine Learning Engineer.
 
-You’ll begin by learning QuickSight’s fundamental concepts and how to configure data sources. Next, you’ll be introduced to the main analysis-building functionality of QuickSight to develop visuals and dashboards. The book will also demonstrate how to develop and share interactive dashboards with parameters and on-screen controls. Advanced filtering options with URL actions will then be covered, before learning how to set up alerts and scheduled reports. Later, you’ll explore the Insights visual type in QuickSight using both existing insights and by building custom insights. Further chapters will show you how to add machine learning insights such as forecasting capabilities, analyzing time series data, adding narratives, and outlier detection to your dashboards. You’ll also explore patterns to automate operations and look closer into the API actions that allow us to control settings. Finally, you’ll learn advanced topics such as embedded dashboards and multitenancy.
+The book is for someone who has the basic Google Cloud Platform (GCP) knowledge and skills, and basic Python programming skills, and wants to learn machine learning in GCP to take their next step toward becoming a Google Cloud Certified Machine Learning professional.
 
-By the end of this book, you’ll be well-versed with QuickSight’s BI and analytics functionalities that will help you create BI apps with ML capabilities.
+The book starts by laying the foundations of Google Cloud Platform and Python programming, followed the by building blocks of machine learning, then focusing on machine learning in Google Cloud, and finally ends the studying for the Google Cloud Machine Learning certification by integrating all the knowledge and skills together.
+
+The book is based on the graduate courses the author has been teaching at the University of Texas at Dallas. When going through the chapters, the reader is expected to study the concepts, complete the exercises, understand and practice the labs in the appendices, and study each exam question thoroughly. Then, at the end of the learning journey, you can expect to harvest the knowledge, skills, and a certificate.
 
 This book covers the following exciting features: 
-* Understand the wider AWS analytics ecosystem and how QuickSight fits within it
-* Set up and configure data sources with Amazon QuickSight
-* Include custom controls and add interactivity to your BI application using parameters
-* Add ML insights such as forecasting, anomaly detection, and narratives
-* Explore patterns to automate operations using QuickSight APIs
-* Create interactive dashboards and storytelling with Amazon QuickSight
-* Design an embedded multi-tenant analytics architecture
-* Focus on data permissions and how to manage Amazon QuickSight operations
+* Provision Google Cloud services related to data science and machine learning
+* Program with the Python programming language and data science libraries
+* Understand machine learning concepts and model development processes
+* Explore deep learning concepts and neural networks
+* Build, train, and deploy ML models with Google BigQuery ML, Keras, and Google Cloud Vertex AI
+* Discover the Google Cloud ML Application Programming Interface (API)
+* Prepare to achieve Google Cloud Professional Machine Learning Engineer certification
 
-If you feel this book is for you, get your [copy](https://www.amazon.in/Actionable-Insights-Amazon-QuickSight-learning-driven/dp/1801079293/ref=sr_1_1?keywords=Actionable+Insights+with+Amazon+QuickSight&qid=1638759116&sr=8-1) today!
+If you feel this book is for you, get your [copy](https://www.amazon.in/Journey-Become-Machine-Learning-Engineer-ebook/dp/B0B9SPM199/ref=sr_1_1?crid=X0SKIMH1M6XX&keywords=Journey+to+become+a+Google+Cloud+Machine+Learning+Engineer&qid=1662439068&sprefix=journey+to+become+a+google+cloud+machine+learning+engineer%2Caps%2C298&sr=8-1) today!
 
 <a href="https://www.packtpub.com/product/journey-to-become-a-google-cloud-machine-learning-engineer/9781803233727"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" alt="https://www.packtpub.com/" border="5" /></a>
 
@@ -39,10 +40,11 @@ All of the code is organized into folders.
 
 The code will look like the following:
 ```
-$aws quicksight update-user --user-name author-iam --role
-AUTHOR --custom-permissions-name custom-author --email <youremail>
---aws-account-id <account-id> --namespace default
---region us-east-1
+html, body, #map {
+height: 100%;
+margin: 0;
+padding: 0
+}
 ```
 **Following is what you need for this book:**
 This book is for business intelligence (BI) developers and data analysts who are looking to create interactive dashboards using data from Lake House on AWS with Amazon QuickSight. This book will also be useful for anyone who wants to learn Amazon QuickSight in depth using practical examples. You will need to be familiar with general data visualization concepts, however, no prior experience with Amazon QuickSight is required.
@@ -53,14 +55,14 @@ With the following software and hardware list you can run all code files present
 
 | Chapter  | Software required                                                                    | OS required                        |
 | -------- | -------------------------------------------------------------------------------------| -----------------------------------|
-|  	1-10	   |   	AWS Web Services(AWS) with a recent version of a modern web browser(Chrome, Edge, etc.)                                  			  | Any OS | 		
+|  	1-10	   |   	Google cloud Services(GCP) with a recent version of a modern web browser(Chrome, Edge, etc.)                                  			  | Any OS | 		
 
-We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781801079297_ColorImages.pdf).
+We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://packt.link/ugTOg).
 
-### Related products <Other books you may enjoy>
-* Machine Learning with Amazon SageMaker Cookbook  [[Packt]](https://www.packtpub.com/product/machine-learning-with-amazon-sagemaker-cookbook/9781800567030) [[Amazon]](https://www.amazon.in/Machine-Learning-Amazon-SageMaker-Cookbook/dp/1800567030/ref=sr_1_3?keywords=Machine+Learning+with+Amazon+SageMaker+Cookbook&qid=1638759383&sr=8-3)
+### Related products 
+* Practical Deep Learning at Scale with MLflow [[Packt]](https://www.packtpub.com/product/practical-deep-learning-at-scale-with-mlflow/9781803241333) [[Amazon]](https://www.amazon.in/Practical-Deep-Learning-Scale-MLflow/dp/1803241330/ref=sr_1_2?crid=1RZFE8BHM0V29&keywords=Practical+Deep+Learning+at+Scale+with+MLflow&qid=1662439339&sprefix=practical+deep+learning+at+scale+with+mlflow%2Caps%2C261&sr=8-2)
   
-* Amazon Redshift Cookbook  [[Packt]](https://www.packtpub.com/product/amazon-redshift-cookbook/9781800569683) [[Amazon]](https://www.amazon.in/Amazon-Redshift-Cookbook-warehousing-solutions/dp/1800569688/ref=sr_1_1?keywords=Amazon+Redshift+Cookbook&qid=1638759416&sr=8-1)
+* Machine Learning on Kubernetes [[Packt]](https://www.packtpub.com/product/machine-learning-on-kubernetes/9781803241807) [[Amazon]](https://www.amazon.in/Machine-Learning-Kubernetes-practical-handbook-ebook/dp/B09WF2B1BX/ref=sr_1_3?keywords=Machine+Learning+on+Kubernetes&qid=1662439452&sr=8-3)
   
 ## Get to Know the Author
-**Manos Samatas** is a Solutions Architect specializing in Big Data and Analytics. He has several years of experience developing and designing big data applications for various industries, including telecommunications, cybersecurity, healthcare, and public sector. He is an accredited AWS Subject Matter Expert (SME) in Analytics and he is certified with the AWS Data Analytics Specialty and the AWS Solutions Architect Professional certifications. Manos lives in London with his fiancé Gabriela. In his free time, he enjoys traveling, socializing with friends, and taking care of his plants.
+**Dr. Logan Song** is the enterprise cloud director and chief cloud architect at Dito. With 25+ years of professional experience, Dr. Song is highly skilled in enterprise information technologies, specializing in cloud computing and machine learning. He is a Google Cloud-certified professional solution architect and machine learning engineer, an AWS-certified professional solution architect and machine learning specialist, and a Microsoft-certified Azure solution architect expert. Dr. Song holds a Ph.D. in industrial engineering, an MS in computer science, and an ME in management engineering. Currently, he is also an adjunct professor at the University of Texas at Dallas, teaching cloud computing and machine learning courses.	
