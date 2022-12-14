@@ -1,3 +1,15 @@
+
+### Get this product for $5
+
+<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+
+
+<b><p align='center'>[Buy now](https://packt.link/9781803233727)</p></b>
+
+
+<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+
+
 # Journey to Become a Google Cloud Machine Learning Engineer
 
 <a href="https://www.packtpub.com/product/journey-to-become-a-google-cloud-machine-learning-engineer/9781803233727"><img src="https://static.packt-cdn.com/products/9781803233727/cover/smaller" alt="Journey to Become a Google Cloud Machine Learning Engineer" height="256px" align="right"></a>
